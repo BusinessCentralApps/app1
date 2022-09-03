@@ -1,0 +1,32 @@
+﻿{
+    "id":  "142d5fd8-ecb6-46d5-b417-a14b1b1594f0",
+    "name":  "app1",
+    "publisher":  "Freddy",
+    "version":  "1.0.0.0",
+    "brief":  "",
+    "description":  "",
+    "privacyStatement":  "",
+    "EULA":  "",
+    "help":  "",
+    "url":  "",
+    "logo":  "",
+    "dependencies":  [
+
+                     ],
+    "screenshots":  [
+
+                    ],
+    "platform":  "1.0.0.0",
+    "application":  "19.0.0.0",
+    "idRanges":  [
+                     {
+                         "from":  50000,
+                         "to":  60000
+                     }
+                 ],
+    "resourceExposurePolicy":  {
+                                   "allowDebugging":  true,
+                                   "allowDownloadingSource":  false,
+                                   "includeSourceInSymbolFile":  false
+                               }
+}
