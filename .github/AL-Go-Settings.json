@@ -1,5 +1,6 @@
 {
     "type":  "PTE",
     "templateUrl":  "https://github.com/microsoft/AL-Go-PTE@main",
-    "githubrunner":  "self-hosted"
+    "githubrunner":  "self-hosted",
+    "BcContainerHelperVersion":  "4.0.1"
 }
