@@ -3,5 +3,11 @@
     "appFolders":  [
     ],
     "testFolders":  [
+    ],
+    "appDependencyProbingPaths": [
+        {
+            "repo": "https://github.com/businesscentralapps/publicdependency",
+            "release_status":  "release"
+        }
     ]
 }
