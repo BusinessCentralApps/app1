@@ -7,6 +7,16 @@
                                "name":  "Cloud Sandbox (mysandbox)",
                                "environmentType":  "Sandbox",
                                "environmentName":  "mysandbox"
+                           },
+                           {
+                               "type":  "al",
+                               "request":  "launch",
+                               "name":  "Local Sandbox (bcserver)",
+                               "server":  "http://bcserver",
+                               "serverInstance":  "BC",
+                               "port":  7049,
+                               "tenant":  "default",
+                               "authentication":  "UserPassword"
                            }
                        ]
 }
