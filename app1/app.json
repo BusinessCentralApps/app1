@@ -11,7 +11,12 @@
     "url":  "",
     "logo":  "",
     "dependencies":  [
-
+        {
+            "id": "ab162ba1-fa56-4699-b47b-c9d734d550ae",
+            "name": "App1Base",
+            "publisher": "Freddy",
+            "version": "1.0.0.0"
+        }
                      ],
     "screenshots":  [
 
