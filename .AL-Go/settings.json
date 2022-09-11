@@ -3,5 +3,12 @@
     "appFolders":  [
     ],
     "testFolders":  [
+    ],
+    "appDependencyProbingPaths": [
+        {
+            "repo": "https://github.com/FreundDK/common",
+            "release_status":  "latestBuild",
+	    	"AuthTokenSecret":  "GhTokenWorkflow"
+        }
     ]
 }

@@ -16,6 +16,12 @@
             "name": "App1Base",
             "publisher": "Freddy",
             "version": "1.0.0.0"
+        },
+        {
+            "id":  "7de00282-c532-4cba-af1d-bcd283c57143",
+            "name":  "Common",
+            "publisher":  "Freddy",
+            "version":  "1.0.0.0"
         }
                      ],
     "screenshots":  [
