@@ -1,36 +1,38 @@
-{
-  "id": "d8275580-aa67-404d-b9bd-86f040745da1",
-  "name": "App1Base",
-  "publisher": "Freddy",
-  "version": "1.0.0.0",
-  "brief": "",
-  "description": "",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
-  "dependencies": [
-    {
-      "id": "1631b0e7-f7b2-429b-948d-318e375c66da",
-      "publisher": "Freddy",
-      "name": "PublicDependencyApp",
-      "version": "1.0.0.0"
-    }
-  ],
-  "screenshots": [],
-  "platform": "1.0.0.0",
-  "application": "20.0.0.0",
-  "idRanges": [
-    {
-      "from": 50100,
-      "to": 50149
-    }
-  ],
-  "resourceExposurePolicy": {
-    "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
-  },
-  "runtime": "9.0"
+﻿{
+    "id":  "d8275580-aa67-404d-b9bd-86f040745da1",
+    "name":  "App1Base",
+    "publisher":  "Freddy",
+    "version":  "1.1.0.0",
+    "brief":  "",
+    "description":  "",
+    "privacyStatement":  "",
+    "EULA":  "",
+    "help":  "",
+    "url":  "",
+    "logo":  "",
+    "dependencies":  [
+                         {
+                             "id":  "1631b0e7-f7b2-429b-948d-318e375c66da",
+                             "publisher":  "Freddy",
+                             "name":  "PublicDependencyApp",
+                             "version":  "1.0.0.0"
+                         }
+                     ],
+    "screenshots":  [
+
+                    ],
+    "platform":  "1.0.0.0",
+    "application":  "20.0.0.0",
+    "idRanges":  [
+                     {
+                         "from":  50100,
+                         "to":  50149
+                     }
+                 ],
+    "resourceExposurePolicy":  {
+                                   "allowDebugging":  true,
+                                   "allowDownloadingSource":  false,
+                                   "includeSourceInSymbolFile":  false
+                               },
+    "runtime":  "9.0"
 }
