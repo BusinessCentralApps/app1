@@ -4,6 +4,10 @@
     "githubrunner":  "self-hosted",
     "BcContainerHelperVersion":  "4.0.1",
     "environments":  [
-                         "QA"
-                     ]
+                         "QA",
+                         "FAT (FAT)",
+                         "PROD (PROD)"
+                     ],
+    "FAT_AuthContextSecretName":  "QA_AuthContext",
+    "PROD_AuthContextSecretName":  "QA_AuthContext"
 }
