@@ -1,21 +1,24 @@
-{
+﻿{
     "country":  "us",
     "appFolders":  [
-    ],
+
+                   ],
     "testFolders":  [
-    ],
-    "appDependencyProbingPaths": [
-        {
-            "repo": "https://github.com/FreundDKorg/common",
-            "release_status":  "latestBuild",
-	    	"AuthTokenSecret":  "GhTokenWorkflow"
-        },
-        {
-            "repo": "https://github.com/businesscentralapps/publicdependency"
-        }
-    ],
+
+                    ],
+    "appDependencyProbingPaths":  [
+                                      {
+                                          "repo":  "https://github.com/FreundDKorg/common",
+                                          "release_status":  "latestBuild",
+                                          "AuthTokenSecret":  "GhTokenWorkflow"
+                                      },
+                                      {
+                                          "repo":  "https://github.com/businesscentralapps/publicdependency"
+                                      }
+                                  ],
     "generateDependencyArtifact":  true,
     "installApps":  [
-        "https://businesscentralapps.blob.core.windows.net/privatedependency/preview/privatedependency-apps.zip?sv=2021-04-10&st=2022-09-09T02%3A17%3A38Z&se=2023-09-10T02%3A17%3A00Z&sr=b&sp=r&sig=g%2FpbeWPaYnvDNVh4RjuVDo5gqXKXbA7g%2Bphqh9%2FntYQ%3D"
-    ]
+                        "https://businesscentralapps.blob.core.windows.net/privatedependency/preview/privatedependency-apps.zip?sv=2021-04-10\u0026st=2022-09-09T02%3A17%3A38Z\u0026se=2023-09-10T02%3A17%3A00Z\u0026sr=b\u0026sp=r\u0026sig=g%2FpbeWPaYnvDNVh4RjuVDo5gqXKXbA7g%2Bphqh9%2FntYQ%3D"
+                    ],
+    "RepoVersion":  "1.1"
 }
