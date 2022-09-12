@@ -9,9 +9,6 @@ Note that when using the preview version of AL-Go for GitHub, you need to Update
 - Issue #155 Initial Add existing app fails with "Cannot find path"
 - Issue #152 Error when loading dependencies from releases
 - Issue #168 Regression in preview fixed
-- Issue #189 Warnings: Resource not accessible by integration
-- Issue #190 PublishToEnvironment is not working with AL-Go-PTE@preview
-- Issue #186 AL-GO build fails for multi-project repository when there's nothing to build
 
 ### AppSource Apps
 - New workflow: Publish to AppSource
@@ -43,11 +40,9 @@ Note that when using the preview version of AL-Go for GitHub, you need to Update
 - appDependencyProbingPaths with release=latestBuild only considered the last 30 artifacts
 - Use mutex around ReadSecrets to ensure that multiple agents on the same host doesn't clash
 - Add lfs when checking out files for CI/CD to support checking in dependencies
-- Continue on error with Deploy and Deliver
 
 ### CI/CD and Publish To New Environment
 - Base functionality for selecting a specific GitHub runner for an environment
-- Include dependencies artifacts when deploying (if generateDependencyArtifacts is true)
 
 ### localDevEnv.ps1 and cloudDevEnv.ps1
 - Display clear error message if something goes wrong
