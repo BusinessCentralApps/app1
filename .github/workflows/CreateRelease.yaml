@@ -58,7 +58,7 @@ jobs:
 
       - name: Initialize the workflow
         id: init
-        uses: FreundDK/AL-Go-Actions/WorkflowInitialize@main
+        uses: freddydk/AL-Go-Actions/WorkflowInitialize@main
         with:
           eventId: "DO0094"
 
@@ -73,13 +73,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Read settings
-        uses: FreundDK/AL-Go-Actions/ReadSettings@main
+        uses: freddydk/AL-Go-Actions/ReadSettings@main
         with:
           parentTelemetryScopeJson: ${{ needs.Initialization.outputs.telemetryScopeJson }}
           get: TemplateUrl
 
       - name: Check for updates to AL-Go system files
-        uses: FreundDK/AL-Go-Actions/CheckForUpdates@main
+        uses: freddydk/AL-Go-Actions/CheckForUpdates@main
         with:
           parentTelemetryScopeJson: ${{ needs.Initialization.outputs.telemetryScopeJson }}
           templateUrl: ${{ env.TemplateUrl }}
@@ -116,7 +116,7 @@ jobs:
 
       - name: Prepare release notes
         id: createreleasenotes
-        uses: FreundDK/AL-Go-Actions/CreateReleaseNotes@main
+        uses: freddydk/AL-Go-Actions/CreateReleaseNotes@main
         with:
           parentTelemetryScopeJson: ${{ needs.Initialization.outputs.telemetryScopeJson }}
           tag_name: '${{github.event.inputs.tag}}'
@@ -144,12 +144,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Read settings
-        uses: FreundDK/AL-Go-Actions/ReadSettings@main
+        uses: freddydk/AL-Go-Actions/ReadSettings@main
         with:
           parentTelemetryScopeJson: ${{ needs.Initialization.outputs.telemetryScopeJson }}
 
       - name: Read secrets
-        uses: FreundDK/AL-Go-Actions/ReadSecrets@main
+        uses: freddydk/AL-Go-Actions/ReadSecrets@main
         env:
           secrets: ${{ toJson(secrets) }}
         with:
@@ -186,7 +186,7 @@ jobs:
           Write-Host "set-output name=deliveryContext::$deliveryContext"
 
       - name: Deliver
-        uses: FreundDK/AL-Go-Actions/Deliver@main
+        uses: freddydk/AL-Go-Actions/Deliver@main
         if: ${{ env.StorageContext }}
         env:
           deliveryContext: '${{ steps.deliveryContext.outputs.deliveryContext }}'
@@ -219,7 +219,7 @@ jobs:
     needs: [ Initialization, CreateRelease, UploadArtifacts ]
     steps:
       - name: Update Version Number
-        uses: FreundDK/AL-Go-Actions/IncrementVersionNumber@main
+        uses: freddydk/AL-Go-Actions/IncrementVersionNumber@main
         with:
           parentTelemetryScopeJson: ${{ needs.Initialization.outputs.telemetryScopeJson }}
           versionNumber: ${{ github.event.inputs.updateVersionNumber }}
@@ -235,7 +235,7 @@ jobs:
 
       - name: Finalize the workflow
         id: PostProcess
-        uses: FreundDK/AL-Go-Actions/WorkflowPostProcess@main
+        uses: freddydk/AL-Go-Actions/WorkflowPostProcess@main
         with:
           eventId: "DO0094"
           telemetryScopeJson: ${{ needs.Initialization.outputs.telemetryScopeJson }}
