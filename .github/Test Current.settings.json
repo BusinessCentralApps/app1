@@ -2,5 +2,6 @@
     "artifact":  "////latest",
     "cacheImageName":  "",
     "versioningStrategy":  15,
-    "additionalCountries":  [ "de", "dk" ]
+    "additionalCountries":  [ "de", "dk" ],
+    "doNotRunBcptTests": false
 }
