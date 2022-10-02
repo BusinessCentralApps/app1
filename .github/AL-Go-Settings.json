@@ -9,5 +9,6 @@
                      ],
     "FAT_AuthContextSecretName":  "QA_AuthContext",
     "PROD_AuthContextSecretName":  "QA_AuthContext",
-    "doNotRunBcptTests":  true
+    "doNotRunBcptTests":  true,
+    "useGitHubPackages":  true
 }
