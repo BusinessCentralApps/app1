@@ -25,5 +25,5 @@
         "Dependencies\\*.zip"
                     ],
     "RepoVersion":  "1.1",
-    "failon":  "Warning"
+    "failOn":  "Warning"
 }
