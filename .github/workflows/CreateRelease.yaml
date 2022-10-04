@@ -190,17 +190,21 @@ jobs:
           asset_name: '${{ matrix.name }}.zip'
           asset_content_type: application/zip
 
+
       - name: NuGetContext
         id: nuGetContext
-        if: ('${{ env.NuGetContext }}') && ('${{ matrix.project }}' == 'Apps')
+        if: ${{ env.NuGetContext }}
         run: |
-          $nuGetContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('NuGetContext')))
+          $nuGetContext = ''
+          if ('${{ matrix.atype }}' -eq 'Apps') {
+            $nuGetContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('NuGetContext')))
+          }
           Write-Host "::set-output name=nuGetContext::$nuGetContext"
           Write-Host "set-output name=nuGetContext::$nuGetContext"
 
       - name: Deliver to NuGet
         uses: freddydk/AL-Go-Actions/Deliver@main
-        if: ('${{ env.NuGetContext }}') && ('${{ matrix.project }}' == 'Apps')
+        if: ${{ steps.nuGetContext.outputs.nuGetContext }}
         env:
           deliveryContext: ${{ steps.nuGetContext.outputs.nuGetContext }}
         with:
@@ -212,15 +216,18 @@ jobs:
 
       - name: StorageContext
         id: storageContext
-        if: ('${{ env.StorageContext }}') && ('${{ matrix.project }}' == 'Apps')
+        if: ${{ env.StorageContext }}
         run: |
-          $storageContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('StorageContext')))
+          $storageContext = ''
+          if ('${{ matrix.atype }}' -eq 'Apps') {
+            $storageContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('StorageContext')))
+          }
           Write-Host "::set-output name=storageContext::$storageContext"
           Write-Host "set-output name=storageContext::$storageContext"
 
       - name: Deliver to Storage
         uses: freddydk/AL-Go-Actions/Deliver@main
-        if: ('${{ env.StorageContext }}') && ('${{ matrix.project }}' == 'Apps')
+        if: ${{ steps.storageContext.outputs.storageContext }}
         env:
           deliveryContext: ${{ steps.storageContext.outputs.storageContext }}
         with:
