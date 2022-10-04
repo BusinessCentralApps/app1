@@ -192,7 +192,7 @@ jobs:
 
       - name: NuGetContext
         id: nuGetContext
-        if: ('${{ env.NuGetContext }}' != '') && ('${{ matrix.project }}' == 'Apps')
+        if: ('${{ env.NuGetContext }}') && ('${{ matrix.project }}' == 'Apps')
         run: |
           $nuGetContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('NuGetContext')))
           Write-Host "::set-output name=nuGetContext::$nuGetContext"
@@ -200,7 +200,7 @@ jobs:
 
       - name: Deliver to NuGet
         uses: freddydk/AL-Go-Actions/Deliver@main
-        if: ('${{ env.NuGetContext }}' != '') && ('${{ matrix.project }}' == 'Apps')
+        if: ('${{ env.NuGetContext }}') && ('${{ matrix.project }}' == 'Apps')
         env:
           deliveryContext: ${{ steps.nuGetContext.outputs.nuGetContext }}
         with:
@@ -212,7 +212,7 @@ jobs:
 
       - name: StorageContext
         id: storageContext
-        if: ('${{ env.StorageContext }}' != '') && ('${{ matrix.project }}' == 'Apps')
+        if: ('${{ env.StorageContext }}') && ('${{ matrix.project }}' == 'Apps')
         run: |
           $storageContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('StorageContext')))
           Write-Host "::set-output name=storageContext::$storageContext"
@@ -220,7 +220,7 @@ jobs:
 
       - name: Deliver to Storage
         uses: freddydk/AL-Go-Actions/Deliver@main
-        if: ('${{ env.StorageContext }}' != '') && ('${{ matrix.project }}' == 'Apps')
+        if: ('${{ env.StorageContext }}') && ('${{ matrix.project }}' == 'Apps')
         env:
           deliveryContext: ${{ steps.storageContext.outputs.storageContext }}
         with:
