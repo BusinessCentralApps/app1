@@ -24,5 +24,6 @@
         "https://businesscentralapps.blob.core.windows.net/privatedependency/preview/privatedependency-apps.zip?sv=2021-04-10\u0026st=2022-09-09T02%3A17%3A38Z\u0026se=2023-09-10T02%3A17%3A00Z\u0026sr=b\u0026sp=r\u0026sig=g%2FpbeWPaYnvDNVh4RjuVDo5gqXKXbA7g%2Bphqh9%2FntYQ%3D",
         "Dependencies\\*.zip"
                     ],
-    "RepoVersion":  "1.1"
+    "RepoVersion":  "1.1",
+    "failOn":  "Warning"
 }
