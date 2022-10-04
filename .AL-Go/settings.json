@@ -11,11 +11,6 @@
                        ],
     "appDependencyProbingPaths":  [
                                       {
-                                          "repo":  "https://github.com/FreundDKorg/common",
-                                          "release_status":  "latestBuild",
-                                          "AuthTokenSecret":  "GhTokenWorkflow"
-                                      },
-                                      {
                                           "repo":  "https://github.com/businesscentralapps/publicdependency"
                                       }
                                   ],
