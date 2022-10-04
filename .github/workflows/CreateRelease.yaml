@@ -168,7 +168,7 @@ jobs:
         with:
           parentTelemetryScopeJson: ${{ needs.Initialization.outputs.telemetryScopeJson }}
           settingsJson: ${{ env.Settings }}
-          secrets: 'StorageContext'
+          secrets: 'NuGetContext,StorageContext'
 
       - name: Download artifact
         run: |
@@ -193,22 +193,36 @@ jobs:
         id: deliveryContext
         if: ${{ env.StorageContext }}
         run: |
-          $contextName = 'StorageContext'
-          $deliveryContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable($contextName)))
-          Write-Host "::set-output name=deliveryContext::$deliveryContext"
-          Write-Host "set-output name=deliveryContext::$deliveryContext"
+          $storageContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('StorageContext')))
+          $nuGetContext = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String([System.Environment]::GetEnvironmentVariable('StorageContext')))
+          Write-Host "::set-output name=storageContext::$storageContext"
+          Write-Host "set-output name=storageContext::$storageContext"
+          Write-Host "::set-output name=nuGetContext::$nuGetContext"
+          Write-Host "set-output name=nuGetContext::$nuGetContext"
 
-      - name: Deliver
+      - name: Deliver to NuGet
         uses: freddydk/AL-Go-Actions/Deliver@main
-        if: ${{ env.StorageContext }}
+        if: ('${{ env.NuGetContext }}' != '') && ('${{ matrix.project }}' == 'Apps')
         env:
-          deliveryContext: ${{ steps.deliveryContext.outputs.deliveryContext }}
+          deliveryContext: ${{ steps.deliveryContext.outputs.nuGetContext }}
+        with:
+          type: 'Release'
+          projects: ${{ matrix.project }}
+          deliveryTarget: 'NuGet'
+          artifacts: ${{ github.event.inputs.appVersion }}
+          atypes: 'Apps,TestApps'
+
+      - name: Deliver to Storage
+        uses: freddydk/AL-Go-Actions/Deliver@main
+        if: ('${{ env.StorageContext }}' != '') && ('${{ matrix.project }}' == 'Apps')
+        env:
+          deliveryContext: ${{ steps.deliveryContext.outputs.storageContext }}
         with:
           type: 'Release'
           projects: ${{ matrix.project }}
           deliveryTarget: 'Storage'
           artifacts: ${{ github.event.inputs.appVersion }}
-          atypes: ${{ matrix.atype }}
+          atypes: 'Apps,TestApps,Dependencies'
 
   CreateReleaseBranch:
     if: ${{ github.event.inputs.createReleaseBranch=='Y' }}
