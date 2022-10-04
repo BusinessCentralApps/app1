@@ -2,7 +2,7 @@
     "id":  "142d5fd8-ecb6-46d5-b417-a14b1b1594f0",
     "name":  "app1",
     "publisher":  "Freddy",
-    "version":  "1.1.0.0",
+    "version":  "1.2.0.0",
     "brief":  "",
     "description":  "",
     "privacyStatement":  "",
@@ -31,11 +31,11 @@
                              "version":  "1.0.0.0"
                          },
                          {
-                            "id":  "165d73c1-39a4-4fb6-85a5-925edc1684fb",
-                            "name":  "BingMaps.PTE",
-                            "publisher":  "Freddy Kristiansen",
-                            "version":  "4.1.0.0"                        
-                        }
+                             "id":  "165d73c1-39a4-4fb6-85a5-925edc1684fb",
+                             "name":  "BingMaps.PTE",
+                             "publisher":  "Freddy Kristiansen",
+                             "version":  "4.1.0.0"
+                         }
                      ],
     "screenshots":  [
 
