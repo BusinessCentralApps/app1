@@ -71,7 +71,7 @@ jobs:
             $deliveryTargets += @("NuGet")
           }
           if ($env:GitHubPackagesContext) {
-            $deliveryTargets += @("GitHub Packages")
+            $deliveryTargets += @("GitHubPackages")
           }
           if ($env:type -eq "AppSource App" -and $env:AppSourceContinuousDelivery -eq "true") {
             if ($env:AppSourceContext) {
