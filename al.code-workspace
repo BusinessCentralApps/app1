@@ -11,6 +11,9 @@
                     },
                     {
                         "path":  "App1.PerformanceTest"
+                    },
+                    {
+                        "path":  "app1.Test2"
                     }
                 ],
     "settings":  {
