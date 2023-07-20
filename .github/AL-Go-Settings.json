@@ -1,14 +1,14 @@
-﻿{
-    "type":  "PTE",
-    "templateUrl":  "https://github.com/freddydk/AL-Go-PTE@main",
-    "BcContainerHelperVersion":  "4.0.1",
-    "environments":  [
-                         "QA",
-                         "FAT (FAT)",
-                         "PROD (PROD)"
-                     ],
-    "FAT_AuthContextSecretName":  "QA_AuthContext",
-    "PROD_AuthContextSecretName":  "QA_AuthContext",
-    "doNotRunBcptTests":  true,
-    "useGitHubPackagesForDependencies":  true
+{
+  "type": "PTE",
+  "templateUrl": "https://github.com/microsoft/AL-Go-PTE@preview",
+  "BcContainerHelperVersion": "4.0.1",
+  "environments": [
+    "QA",
+    "FAT (FAT)",
+    "PROD (PROD)"
+  ],
+  "FAT_AuthContextSecretName": "QA_AuthContext",
+  "PROD_AuthContextSecretName": "QA_AuthContext",
+  "doNotRunBcptTests": true,
+  "useGitHubPackagesForDependencies": true
 }

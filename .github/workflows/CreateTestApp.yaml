@@ -1,4 +1,6 @@
-﻿name: Create a new test app
+name: 'Create a new test app'
+
+run-name: "Create a new test app in [${{ github.ref_name }}]"
 
 on:
   workflow_dispatch:
@@ -33,24 +35,30 @@ permissions:
 
 defaults:
   run:
-    shell: PowerShell
+    shell: powershell
+
+env:
+  ALGoOrgSettings: ${{ vars.ALGoOrgSettings }}
+  ALGoRepoSettings: ${{ vars.ALGoRepoSettings }}
 
 jobs:
   CreateTestApp:
     runs-on: [ windows-latest ]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Initialize the workflow
         id: init
-        uses: freddydk/AL-Go-Actions/WorkflowInitialize@main
+        uses: microsoft/AL-Go-Actions/WorkflowInitialize@preview
         with:
+          shell: powershell
           eventId: "DO0095"
 
       - name: Creating a new test app
-        uses: freddydk/AL-Go-Actions/CreateApp@main
+        uses: microsoft/AL-Go-Actions/CreateApp@preview
         with:
+          shell: powershell
           parentTelemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
           project: ${{ github.event.inputs.project }}
           type: 'Test App'
@@ -62,7 +70,8 @@ jobs:
 
       - name: Finalize the workflow
         if: always()
-        uses: freddydk/AL-Go-Actions/WorkflowPostProcess@main
+        uses: microsoft/AL-Go-Actions/WorkflowPostProcess@preview
         with:
+          shell: powershell
           eventId: "DO0095"
           telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}

@@ -1,4 +1,6 @@
-﻿name: Increment Version Number
+name: ' Increment Version Number'
+
+run-name: "Increment Version Number in [${{ github.ref_name }}]"
 
 on:
   workflow_dispatch:
@@ -21,24 +23,30 @@ permissions:
 
 defaults:
   run:
-    shell: PowerShell
+    shell: powershell
+
+env:
+  ALGoOrgSettings: ${{ vars.ALGoOrgSettings }}
+  ALGoRepoSettings: ${{ vars.ALGoRepoSettings }}
 
 jobs:
   IncrementVersionNumber:
     runs-on: [ windows-latest ]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Initialize the workflow
         id: init
-        uses: freddydk/AL-Go-Actions/WorkflowInitialize@main
+        uses: microsoft/AL-Go-Actions/WorkflowInitialize@preview
         with:
+          shell: powershell
           eventId: "DO0096"
 
       - name: Increment Version Number
-        uses: freddydk/AL-Go-Actions/IncrementVersionNumber@main
+        uses: microsoft/AL-Go-Actions/IncrementVersionNumber@preview
         with:
+          shell: powershell
           parentTelemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
           project: ${{ github.event.inputs.project }}
           versionNumber: ${{ github.event.inputs.versionNumber }}
@@ -46,7 +54,8 @@ jobs:
   
       - name: Finalize the workflow
         if: always()
-        uses: freddydk/AL-Go-Actions/WorkflowPostProcess@main
+        uses: microsoft/AL-Go-Actions/WorkflowPostProcess@preview
         with:
+          shell: powershell
           eventId: "DO0096"
           telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
