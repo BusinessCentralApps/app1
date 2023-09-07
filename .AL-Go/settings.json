@@ -12,6 +12,10 @@
     "appDependencyProbingPaths":  [
                                       {
                                           "repo":  "https://github.com/businesscentralapps/publicdependency"
+                                      },
+                                      {
+                                          "repo":  "https://github.com/FreundDKorg/Common",
+                                          "AuthTokenSecret":  "GhTokenWorkflow"
                                       }
                                   ],
     "generateDependencyArtifact":  true,
