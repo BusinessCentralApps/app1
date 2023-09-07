@@ -1,6 +1,6 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/freddydk/AL-Go@PSScriptAnalyzer",
+  "templateUrl": "https://github.com/freddydk/AL-Go@main",
   "environments": [
     "QA",
     "FAT (FAT)",
