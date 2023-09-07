@@ -1,7 +1,6 @@
 {
   "type": "PTE",
   "templateUrl": "https://github.com/freddydk/AL-Go@PSScriptAnalyzer",
-  "BcContainerHelperVersion": "4.0.1",
   "environments": [
     "QA",
     "FAT (FAT)",
