@@ -24,5 +24,6 @@
                         "Dependencies\\*.zip"
                     ],
     "RepoVersion":  "1.2",
-    "failOn":  "Warning"
+    "failOn":  "Warning",
+    "enableExternalRulesets":  true
 }
