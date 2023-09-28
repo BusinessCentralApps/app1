@@ -1,6 +1,6 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/freddydk/Al-Go@EnableExternalRulesets",
+  "templateUrl": "https://github.com/freddydk/AL-Go@main",
   "environments": [
     "FAT (FAT)",
     "PROD (PROD)"
