@@ -1,6 +1,6 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/mazhelez/AL-Go@fix-incremental-build",
+  "templateUrl": "https://github.com/freddydk/AL-Go@bcptreport",
   "environments": [
     "FAT (FAT)",
     "PROD (PROD)"
@@ -9,5 +9,5 @@
   "PROD_AuthContextSecretName": "QA_AuthContext",
   "doNotRunBcptTests": true,
   "useGitHubPackagesForDependencies": true,
-  "templateSha": "3b516ee823bad85bb250fd0f0d609d84a2d5e060"
+  "templateSha": "10f98f2810aebb6f5ca54180a2d794ee24d7f15f"
 }
