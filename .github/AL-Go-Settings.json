@@ -1,6 +1,6 @@
 {
   "type": "PTE",
-  "templateUrl": "https://github.com/freddydk/AL-Go@bcptreport",
+  "templateUrl": "https://github.com/freddydk/AL-Go@nuget",
   "environments": [
     "FAT (FAT)",
     "PROD (PROD)"
@@ -9,5 +9,5 @@
   "PROD_AuthContextSecretName": "QA_AuthContext",
   "doNotRunBcptTests": true,
   "useGitHubPackagesForDependencies": true,
-  "templateSha": "10f98f2810aebb6f5ca54180a2d794ee24d7f15f"
+  "templateSha": "679d5cf17e51b1cd558453f429df6e59bf2ce95c"
 }
