@@ -14,15 +14,15 @@
                                           "repo":  "https://github.com/businesscentralapps/publicdependency"
                                       },
                                       {
+                                          "repo":  "https://github.com/businesscentralapps/privatedependency",
+                                          "AuthTokenSecret":  "GhTokenWorkflow"                                          
+                                      },
+                                      {
                                           "repo":  "https://github.com/FreundDKorg/Common",
                                           "AuthTokenSecret":  "GhTokenWorkflow"
                                       }
                                   ],
     "generateDependencyArtifact":  true,
-    "installApps":  [
-                        "https://businesscentralapps.blob.core.windows.net/privatedependency/preview/privatedependency-apps.zip?sv=2021-10-04&st=2023-09-29T05%3A18%3A53Z&se=2024-09-30T05%3A18%3A00Z&sr=b&sp=r&sig=sxK%2FPIhuV%2BK%2F1GZublOKMGBDDpwvRXeEw76vtMiabNQ%3D",
-                        "Dependencies\\*.zip"
-                    ],
     "RepoVersion":  "1.2",
     "failOn":  "Warning",
     "enableExternalRulesets":  true
